@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      .chat-window {
+        min-height: 450px;
+        max-height: 450px;
+        overflow-y: scroll;
+      }
+      body {
+        background: linear-gradient(180deg, #cf0707 0%, #24941c 100%),
+          radial-gradient(60.91% 100% at 50% 0%, #ee0b0b 0%, #558fbf 100%),
+          linear-gradient(238.72deg, #ffdddd 0%, #720066 100%),
+          linear-gradient(127.43deg, #00ffff 0%, #e4208f 100%),
+          radial-gradient(100.22% 100% at 70.57% 0%, #d6ab5a 0%, #a8a11b 100%),
+          linear-gradient(127.43deg, #b7d500 0%, #6d14a8 100%);
+        background-blend-mode: screen, overlay, hard-light, color-burn,
+          color-dodge, normal;
+        overflow: hidden;
+      }
+      .chat-window::-webkit-scrollbar {
+        display: none;
+      }
+
+      .chat-window {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body class="flex justify-center mt-14 h-screen">
+    <div class="w-full max-w-lg">
+      <div class="bg-purple-500 text-white rounded-t-lg shadow-md p-5">
+        <h2 class="text-xl font-semibold mb-4">Free Chat App (Private and Secure)</h2>
+
+        <div class="flex flex-col space-y-4 chat-window"></div>
+      </div>
+
+      <div class="bg-pink-500 rounded-b-lg shadow-md p-5">
+        <h1 class="text-2xl text-white font-semibold mb-4"></h1>
+
+        <form class="chat">
+          <div class="flex items-center mb-4">
+            <input
+              type="text"
+              class="border border-gray-300 rounded-lg px-4 py-2 flex-grow"
+              placeholder="Type your message here"
+              id="message"
+              name="message"
+              required
+            />
+
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg ml-2"
+            >
+              Send
+            </button>
+
+            
+          </div>
+          <h2 class="text-l font-semibold mb-1">© 2026 Free Chat App. Made with ❤️ by-Pandey Adarsh</h2>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
